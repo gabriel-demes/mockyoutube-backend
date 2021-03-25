@@ -5,3 +5,8 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+
+User.create(username: "gabe", password:"abc123", name:"Gabriel")
+
+Video.create(title:"Testing", description:"Testing123", url:"https://res.cloudinary.com/gd1063/video/upload/v1616686256/ip4lovgz6wabplfy2gmz.mov", thumbnail:"https://res.cloudinary.com/gd1063/image/upload/v1616686232/ezixatoogksih3k7ltwi.png", likes:0, dislikes:0, user_id:1, views:0)
