@@ -9,4 +9,10 @@
 
 User.create(username: "gabe", password:"abc123", name:"Gabriel")
 
-Video.create(title:"Testing", description:"Testing123", url:"https://res.cloudinary.com/gd1063/video/upload/v1616686256/ip4lovgz6wabplfy2gmz.mov", thumbnail:"https://res.cloudinary.com/gd1063/image/upload/v1616686232/ezixatoogksih3k7ltwi.png", likes:0, dislikes:0, user_id:1, views:0)
+Video.create(title:"Testing", description:"Testing123", url:"https://res.cloudinary.com/gd1063/video/upload/v1616686256/ip4lovgz6wabplfy2gmz.mov", thumbnail:"https://res.cloudinary.com/gd1063/image/upload/v1616686232/ezixatoogksih3k7ltwi.png", user_id:1)
+
+Comment.create(
+    body: "wow this is a really great video",
+    video_id:1,
+    user_id: 1,
+)

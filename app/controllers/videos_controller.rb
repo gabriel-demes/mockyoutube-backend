@@ -11,18 +11,23 @@ class VideosController < ApplicationController
     end
 
     def create
-        thumbnail = Cloudinary::Uploader.upload(params[:image])
-        url = Cloudinary::Uploader.upload(params[:video], :resource_type => :video)
-        title = params[:title]
-        description = params[:description]
-        likes = 0
-        dislikes = 0
-        user_id = params[:user_id]
-        views = 0
+        image = Cloudinary::Uploader.upload(params[:newImage])
+        video = Cloudinary::Uploader.upload(params[:newVideo], :resource_type => :video)
+        params[:thumbnail]=image["url"]
+        params[:url]=video["url"]
+        params[:user_id] = 1
 
-        video = Video.create(thumbnail: thumbnail["url"], url: url["url"], title:title, description:description, likes:0, dislikes:0, user_id: user_id, views:0)
+        
+        video = Video.create(video_params)
+        
 
         render json: video
     end
 
+
+    private
+
+    def video_params
+        params.permit(:thumbnail, :url, :user_id, :description, :title)
+      end
 end

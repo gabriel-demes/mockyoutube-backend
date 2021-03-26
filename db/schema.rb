@@ -18,8 +18,8 @@ ActiveRecord::Schema.define(version: 2021_03_25_181652) do
   create_table "comments", force: :cascade do |t|
     t.string "body"
     t.bigint "video_id", null: false
-    t.integer "likes"
-    t.integer "dislikes"
+    t.integer "likes", default: 0
+    t.integer "dislikes", default: 0
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -40,10 +40,10 @@ ActiveRecord::Schema.define(version: 2021_03_25_181652) do
     t.string "description"
     t.string "url"
     t.string "thumbnail"
-    t.integer "likes"
-    t.integer "dislikes"
+    t.integer "likes", default: 0
+    t.integer "dislikes", default: 0
     t.bigint "user_id", null: false
-    t.integer "views"
+    t.integer "views", default: 0
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_videos_on_user_id"
