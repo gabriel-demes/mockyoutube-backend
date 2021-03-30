@@ -25,10 +25,16 @@ class VideosController < ApplicationController
         render json: video
     end
 
+    def update 
+        @video = Video.find(params[:id])
+        @video.update(video_params)
+        render json: @video 
+    end 
+
 
     private
 
     def video_params
-        params.permit(:thumbnail, :url, :user_id, :description, :title)
+        params.permit(:thumbnail, :url, :user_id, :description, :title, :likes, :dislikes)
       end
 end
