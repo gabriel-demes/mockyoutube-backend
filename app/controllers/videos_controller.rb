@@ -1,4 +1,5 @@
 class VideosController < ApplicationController
+    before_action :authenticate, only:      [:create]
 
     def index
         @videos = Video.all
@@ -15,7 +16,7 @@ class VideosController < ApplicationController
         video = Cloudinary::Uploader.upload(params[:newVideo], :resource_type => :video)
         params[:thumbnail]=image["url"]
         params[:url]=video["url"]
-        params[:user_id] = 1
+        params[:user_id] = @user.id
 
         
         video = Video.create(video_params)
