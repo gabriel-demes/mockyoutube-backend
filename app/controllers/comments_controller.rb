@@ -1,5 +1,5 @@
 class CommentsController < ApplicationController
-    before_action :authenticate, only: [:create]
+    # before_action :authenticate, only: [:create]
 
 
     def index
@@ -14,8 +14,9 @@ class CommentsController < ApplicationController
     end
 
     def create
-        video = Video.find_by(params[:video_id])
+        # byebug
         @comment = Comment.create(comment_params)
+        video = Video.find_by(id: @comment[:video_id])
         CommentsChannel.broadcast_to(video, @comment)
         render json: @comment
     end 
