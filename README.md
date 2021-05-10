@@ -1,24 +1,45 @@
-# README
+## MomentJournal
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+MockTube is a video streaming application designed as a YouTube clone. It integrates WebSockets to offer users a realtime comments feature. Users are also able to upload video files as well as thumbnails for each video. 
 
-Things you may want to cover:
+## Technologies
 
-* Ruby version
+- React 16.8(Hooks)
+- Rails 6
+- PostgresSQL
+- Cloudinary API (https://cloudinary.com/)
 
-* System dependencies
+## Setup
 
-* Configuration
+### Backend
 
-* Database creation
+Fork the backend Repo: https://github.com/gabriel-demes/mockyoutube-backend
 
-* Database initialization
+run:
 
-* How to run the test suite
+`bundle install`
 
-* Services (job queues, cache servers, search engines, etc.)
+`rails db:create`
 
-* Deployment instructions
+`rails db:migrate`
 
-* ...
+`rails db:seed`
+
+`rails server`
+
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+
+### Frontend
+
+Fork the frontend Repo: https://github.com/gabriel-demes/mockyoutube-frontend
+
+run:
+
+`npm install`
+
+`npm start`
+
+## Demo
+
+[![MockTube Demo](https://img.youtube.com/vi/bLRJVw765vk/0.jpg)](https://www.youtube.com/watch?v=bLRJVw765vk)
